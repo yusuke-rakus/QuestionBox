@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Answer{% endblock %}
+{% block content %}
+
+    <div class="d-flex justify-content-center align-items-end mt-5">
+    {% if correct_count == q_num %}
+        <h1 class="text-success px-3">{{ correct_count }}</h1>
+        <h3>/  {{ q_num }}</h3>
+    {% elif correct_count == 0 %}
+        <h1 class="text-danger px-3">{{ correct_count }}</h1>
+        <h3>/  {{ q_num }}</h3>
+    {% else %}
+        <h1 class="text-primary px-3">{{ correct_count }}</h1>
+        <h3>/  {{ q_num }}</h3>
+    {% endif %}
+    </div>
+
+{% endblock %}
