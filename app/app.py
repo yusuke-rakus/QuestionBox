@@ -66,6 +66,6 @@ def judge():
     return render_template('answer.html', correct_count=correct_count, wrong_count=wrong_count, q_num=len(answers))
 
 
-if __name__ == '__main__':
-    app.run()
-
+# if __name__ == '__main__':
+#     app.run()
+app = app
