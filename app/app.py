@@ -5,6 +5,7 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(24)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///question.sqlite'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
 db = SQLAlchemy(app)
@@ -66,6 +67,6 @@ def judge():
     return render_template('answer.html', correct_count=correct_count, wrong_count=wrong_count, q_num=len(answers))
 
 
-# if __name__ == '__main__':
-#     app.run()
-app = app
+if __name__ == '__main__':
+    app.run()
+
